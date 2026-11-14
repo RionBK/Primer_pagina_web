@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - MiTienda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor-logo">
+            <h1 class="logo">MiTienda - Admin</h1>
+        </div>
+        <nav class="navegacion-principal">
+            <ul class="lista-enlaces">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="administrador.html">Administración</a></li>
+            </ul>
+            <div class="contenedor-usuario">
+                <a href="login.html">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <section class="seccion-contacto">
+            <h2 class="titulo-seccion">Mantenedor de Productos</h2>
+            
+            <form id="formulario-producto" class="formulario" novalidate>
+                <div class="grupo-control">
+                    <label for="prod-codigo">Código de Producto:</label>
+                    <input type="text" id="prod-codigo" class="entrada-datos" placeholder="Ej: PROD-001">
+                    <span class="mensaje-error" id="error-prod-codigo"></span>
+                </div>
+
+                <div class="grupo-control">
+                    <label for="prod-nombre">Nombre del Producto:</label>
+                    <input type="text" id="prod-nombre" class="entrada-datos">
+                    <span class="mensaje-error" id="error-prod-nombre"></span>
+                </div>
+
+                <div class="grupo-control">
+                    <label for="prod-categoria">Categoría:</label>
+                    <select id="prod-categoria" class="entrada-datos">
+                        <option value="">-- Seleccionar --</option>
+                        <option value="Periféricos">Periféricos</option>
+                        <option value="Monitores">Monitores</option>
+                        <option value="Audio">Audio</option>
+                    </select>
+                    <span class="mensaje-error" id="error-prod-categoria"></span>
+                </div>
+
+                <div class="grupo-control">
+                    <label for="prod-precio">Precio (CLP):</label>
+                    <input type="number" id="prod-precio" class="entrada-datos" min="1">
+                    <span class="mensaje-error" id="error-prod-precio"></span>
+                </div>
+
+                <div class="grupo-control">
+                    <label for="prod-stock">Stock Actual:</label>
+                    <input type="number" id="prod-stock" class="entrada-datos" min="0">
+                    <span class="mensaje-error" id="error-prod-stock"></span>
+                </div>
+
+                <div class="grupo-control">
+                    <label for="prod-stock-critico">Stock Crítico:</label>
+                    <input type="number" id="prod-stock-critico" class="entrada-datos" min="1">
+                    <span class="mensaje-error" id="error-prod-stock-critico"></span>
+                </div>
+
+                <div class="grupo-control">
+                    <label for="prod-imagen">URL de la Imagen:</label>
+                    <input type="text" id="prod-imagen" class="entrada-datos" placeholder="https://...">
+                    <span class="mensaje-error" id="error-prod-imagen"></span>
+                </div>
+
+                <button type="submit" class="boton-primario">Guardar Producto</button>
+            </form>
+
+            <h3 style="margin-top: 30px; margin-bottom: 15px;">Listado de Productos</h3>
+            <div style="overflow-x: auto;">
+                <table id="tabla-productos" class="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Stock Crítico</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla-productos">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="seccion-contacto" style="margin-top: 40px;">
+            <h2 class="titulo-seccion">Gestión de Usuarios</h2>
+            <div style="overflow-x: auto;">
+                <table id="tabla-usuarios" class="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>RUN</th>
+                            <th>Nombre Completo</th>
+                            <th>Correo</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla-usuarios">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>2026 MiTienda</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
