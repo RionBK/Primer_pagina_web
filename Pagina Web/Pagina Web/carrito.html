@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - MiTienda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor-logo">
+            <h1 class="logo">MiTienda</h1>
+        </div>
+        <nav class="navegacion-principal">
+            <ul class="lista-enlaces">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#contenedor-productos">Productos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <div class="contenedor-usuario">
+                <a href="login.html">Iniciar Sesión</a>
+                <a href="registro.html">Registrar</a>
+                <div class="carrito-icono">
+                    <span id="contador-carrito">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <section class="seccion-contacto" style="max-width: 900px;">
+            <h2 class="titulo-seccion">Mi Carrito de Compras</h2>
+
+            <!-- Contenedor dinámico cuando el carrito está vacío o con productos -->
+            <div id="contenedor-carrito-vacio" style="text-align: center; display: none; padding: 40px 0;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Tu carrito de compras está actualmente vacío.</p>
+                <a href="index.html" class="boton-primario" style="text-decoration: none;">Ir a ver productos</a>
+            </div>
+
+            <div id="contenedor-detalle-carrito">
+                <div style="overflow-x: auto;">
+                    <table class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio Unitario</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla-carrito">
+                            <!-- Inyección dinámica vía JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Resumen de Totales -->
+                <div class="resumen-carrito">
+                    <div class="fila-resumen">
+                        <span>Total de la Compra:</span>
+                        <strong id="monto-total-carrito">$0 CLP</strong>
+                    </div>
+                    
+                    <div class="acciones-carrito">
+                        <button class="boton-eliminar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                        <button class="boton-primario" onclick="finalizarCompra()">Proceder al Pago</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>2026 MiTienda</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
